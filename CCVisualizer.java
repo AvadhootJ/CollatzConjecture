@@ -15,33 +15,15 @@ public class CCVisualizer {
         Scanner s = new Scanner(System.in);
         System.out.println("Please enter a number");
         int number = s.nextInt();
-
-
         if (number == 1) {
             calculations += number + " " + "--->" + " ";
-            counter = 0;
         }
-
-
         while (number != 1) {
-
-            if (number % 2 == 0) {
-                number = number / 2;
-                counter++;
-                calculations += number + " " + "--->" + " ";
-
-            } else {
-                number = (3 * number) + 1;
-                counter++;
-                calculations += number + " " + "--->" + " ";
-
-            }
-
-
+            counter++;
+            number = number % 2 == 0 ? number / 2 : (3* number) + 1;
+            calculations += number + " " + "--->" + " ";
         }
         System.out.println(calculations.substring(0, calculations.length() - 5));
         System.out.println("It took " + counter + " calculation(s) to reach the number 1 ");
     }
 }
-
-
