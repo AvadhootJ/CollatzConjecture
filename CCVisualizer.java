@@ -7,6 +7,7 @@ import java.util.Scanner;
  * Basic rules to know, if number is even, n/2, if odd, 3n+1.
  * Please do not enter zero.
  */
+
 public class CCVisualizer {
 
     public static void main(String[] args) {
@@ -24,20 +25,9 @@ public class CCVisualizer {
 
 
         while (number != 1) {
-
-            if (number % 2 == 0) {
-                number = number / 2;
-                counter++;
-                calculations += number + " " + "--->" + " ";
-
-            } else {
-                number = (3 * number) + 1;
-                counter++;
-                calculations += number + " " + "--->" + " ";
-
-            }
-
-
+            counter++;
+            number = number % 2 == 0 ? number / 2 : (3 * number) + 1;
+            calculations += number + " " + "--->" + " ";
         }
         System.out.println(calculations.substring(0, calculations.length() - 5));
         System.out.println("It took " + counter + " calculation(s) to reach the number 1 ");
